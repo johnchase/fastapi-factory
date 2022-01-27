@@ -38,14 +38,14 @@ export POSTGRES_TEST_DB="nameoftestdatabase"
 
 ### Create the database migration
 ```
-alembic revision --autogenerate -m "initial revision"
+make migrations
 ```
 
 ### Run the migrations to update the tables in the database
 ```
-alembic upgrade head
+make build
 ```
-### Check the installation
+### Check the installation  
 
 ```
 make test

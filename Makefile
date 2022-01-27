@@ -7,8 +7,11 @@ install-dev:
 serve:
 	uvicorn app.main:app --reload
 
-build:
+migrations:
 	alembic revision --autogenerate -m "latest"
+
+build:
+	alembic upgrade head
 
 test:
 	bash scripts/test.sh
