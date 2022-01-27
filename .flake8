@@ -1,0 +1,8 @@
+[flake8]
+max-line-length = 119
+docstring-convention = pep257 
+exclude =
+    alembic/*
+    .git,
+    __pycache__,
+    docs/source/conf.py,

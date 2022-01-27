@@ -1,4 +1,7 @@
 install: 
+	poetry install --no dev 
+
+install-dev: 
 	poetry install 
 
 serve:
