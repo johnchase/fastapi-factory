@@ -4,6 +4,11 @@ This is a condensed version of the fastapi cookier cutter found [here](https://g
 
 This is intended to be the minimum necessary to start building a larger project with no opinion on deployment or databases
 
+Create a new python environment:
+```
+conda create -n fastapi python=3.9
+```
+
 ### Installation
 Install poetry and packages
 ```
