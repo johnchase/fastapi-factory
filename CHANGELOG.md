@@ -1,3 +1,9 @@
+## 0.2.0 (2022-02-17)
+
+### Feat
+
+- **README.md**: add another version bump test
+
 ## 0.1.1 (2022-02-17)
 
 ### Fix
