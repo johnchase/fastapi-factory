@@ -33,7 +33,6 @@ exclude = "alembic/*"
 [tool.commitizen]
 name = "cz_conventional_commits"
 version = "0.2.0"
-version_files = [
-    "pyproject.toml:version",
-    "app/__init__.py"
-]
+version_files = ["pyproject.toml:version", "app/__init__.py"]
+
+exclude = ["*alembic/*.py", "cdk-neocortex/*", "*nox*"]
