@@ -20,14 +20,14 @@ def coverage(session):
     session.run("coverage", "report")
 
 
-# @nox.session
-# def lint(session):
-#     session.install("poetry")
-#     session.run("poetry", "lock", "--no-update")
-#     session.run("poetry", "install")
-#     session.run("black", "./app")
-#     session.run("flake8")
-#     session.run("pytest", "--isort")
+@nox.session
+def lint(session):
+    session.install("poetry")
+    session.run("poetry", "lock", "--no-update")
+    session.run("poetry", "install")
+    session.run("black", "./app")
+    session.run("flake8")
+    session.run("pytest", "--isort")
 
 
 # @nox.session

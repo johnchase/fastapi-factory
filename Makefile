@@ -14,4 +14,4 @@ build:
 	alembic upgrade head
 
 test:
-	nox -r
+	nox --session test coverage 
