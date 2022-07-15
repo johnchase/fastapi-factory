@@ -14,4 +14,4 @@ build:
 	alembic upgrade head
 
 test:
-	bash scripts/test.sh
+	nox -r
