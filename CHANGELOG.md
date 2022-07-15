@@ -1,3 +1,10 @@
+## 1.0.0 (2022-07-15)
+
+### Feat
+
+- **Dosctrings**: Add a docstring
+- **Dosctrings**: Add a docstring
+
 ## 0.3.1 (2022-07-15)
 
 ### Fix
