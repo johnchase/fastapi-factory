@@ -1,3 +1,10 @@
+## 0.3.1 (2022-07-15)
+
+### Fix
+
+- **Typing**: Not really a bug fix but needed a change
+- **Typing**: Not really a bug fix but needed a change
+
 ## 0.3.0 (2022-07-15)
 
 ### Fix
