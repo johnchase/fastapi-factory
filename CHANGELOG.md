@@ -1,3 +1,14 @@
+## 0.3.0 (2022-07-15)
+
+### Fix
+
+- **pyproject**: Add dependencies to pyproject
+
+### Feat
+
+- **Documentation**: improve documentation
+- **tests**: Improve test suite
+
 ## 0.2.0 (2022-02-17)
 
 ### Feat

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "\u001b"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 authors = ["John Chase <johnhchase@protonmail.com>"]
 
@@ -37,7 +37,7 @@ exclude = "alembic/*"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.2.0"
+version = "0.3.0"
 version_files = ["pyproject.toml:version", "app/__init__.py"]
 
 exclude = ["*alembic/*.py", "cdk-neocortex/*", "*nox*"]
