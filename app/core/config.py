@@ -1,7 +1,8 @@
+import os
 import secrets
 from typing import Any, Dict, List, Optional
 
-from pydantic import AnyHttpUrl, BaseSettings, PostgresDsn, validator
+from pydantic import AnyHttpUrl, BaseSettings, PostgresDsn, validator, validate_model
 
 
 class Settings(BaseSettings):
@@ -43,6 +44,8 @@ class Settings(BaseSettings):
     SQLALCHEMY_TEST_DATABASE_URI: Optional[PostgresDsn] = None
     SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = None
 
+    ENV_RUN_INITIAL_VALIDATION: bool = os.environ.get("RUN_INITIAL_VALIDATION", True)
+
     @validator("SQLALCHEMY_DATABASE_URI", pre=True)
     def assemble_db_connection(cls, v: Optional[str], values: Dict[str, Any]) -> Any:
         if isinstance(v, str):
@@ -78,8 +81,23 @@ class Settings(BaseSettings):
             path=f"/{values.get('POSTGRES_TEST_DB') or ''}",
         )
 
+    def check(self):
+        """Run pydantic validation."""
+        values, fields_set, validation_error = validate_model(self.__class__, self.__dict__)
+        if validation_error:
+            raise validation_error
+        try:
+            object.__setattr__(self, "__dict__", values)
+        except TypeError as e:  # pragma: no cover
+            raise TypeError(
+                "Model values must be a dict; you may not have returned a dictionary from a root validator"
+            ) from e
+        object.__setattr__(self, "__fields_set__", fields_set)
+
     class Config:
         case_sensitive = True
 
 
-settings = Settings()
+settings = Settings.construct()
+if settings.ENV_RUN_INITIAL_VALIDATION:
+    settings.check()
